@@ -1,0 +1,111 @@
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.Scanner;
+
+
+public class HitAndBlow2 {
+	public static void main(String[] args) {
+		System.out.println("何桁の数字で開始しますか？（1〜9）");
+
+		ArrayList<Integer> digitNum = new ArrayList<>();
+
+		Scanner sc = new Scanner(System.in);
+
+		//解答を選ぶ　今こっちがInteger型のArrayList
+		while(true) {
+			int inputNum = sc.nextInt();
+
+			//入力判定
+			if(1 <= inputNum && inputNum >= 9) {
+				System.out.println("正しい数値を入力してください");
+			}
+
+			//入力された文字をdigitNumに追加
+			for(int i = 1; i <= inputNum; i++) {
+				digitNum.add(i);
+			}
+
+			//シャッフル
+			Collections.shuffle(digitNum);
+
+			System.out.print("コンピューターが数字を選んでいます");
+	        String abc = "。。。";
+	        toCharSlow(abc);
+
+			//答え（あとで消す）
+	        System.out.println(digitNum);
+//			for(Integer num : digitNum2) {
+//				System.out.print(num);
+//			}
+
+//			String a = digitNum.toString();
+//			System.out.println(a);
+			break;
+		}
+
+		System.out.println();
+
+		//解答を入力（メソッド）こっちがint型の配列
+
+		int count = 1;
+
+		while(true) {
+			System.out.println(count + "回目の回答");
+
+			Scanner sc2 = new Scanner(System.in);
+			String answerNum = sc2.nextLine();
+
+			String[] strArray = answerNum.split("");
+
+			int[] ansNumList = new int[strArray.length];
+			for (int i = 0; i < strArray.length; i++) {
+				ansNumList[i] = Integer.parseInt(strArray[i]);
+			}
+
+			//答え（あとで消す）
+			System.out.println("答え（あとで消す）" + digitNum);
+
+			int hitNum = 0;
+			int blowNum = 0;
+
+			//答え判定:hit
+	        for (int i = 0; i < ansNumList.length; i++) {
+	        	if(digitNum.get(i).equals(ansNumList[i])){
+					hitNum += 1;
+				}
+	            if (Arrays.asList(digitNum.get(i)).contains(ansNumList)) {
+					blowNum += 1;
+				}
+	        }
+
+			System.out.println("(" + hitNum +"Hit:" + blowNum + "Blow)");
+			if(hitNum == ansNumList.length) {
+				System.out.println(count + "回でクリア");
+				break;
+			}
+
+			count++;
+		}
+	}
+
+
+	//文字を遅く表示（メソッド化する）
+	public static void toCharSlow(String str) {
+
+        char data[] = str.toCharArray();
+
+        // 配列数を取得
+        int arr_num = data.length;
+
+        for (int i = 0; i <= arr_num-1; i++) {
+            try{
+                // 指定ミリ秒の間眠る
+                Thread.sleep(600);
+            }
+            catch(InterruptedException e){
+            }
+            System.out.print(data[i]);
+        }
+	}
+}

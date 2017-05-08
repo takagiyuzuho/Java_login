@@ -1,0 +1,19 @@
+/*
+ * PTra07_06.java
+ *   作成	IT-College	2016
+ *------------------------------------------------------------
+ * Copyright(c) Rhizome Inc. All Rights Reserved.
+ */
+
+public class PTra07_06 {
+	public static void main(String[] args) {
+
+		// PTra07_05.javaで作成したランダム値が入った配列arrayを作成してください
+
+
+		System.out.println("配列の中身を小さい順に並び替えます");
+
+		// 「バブルソート」を用いて、配列arrayの中身を昇順に並び替えてください
+
+	}
+}

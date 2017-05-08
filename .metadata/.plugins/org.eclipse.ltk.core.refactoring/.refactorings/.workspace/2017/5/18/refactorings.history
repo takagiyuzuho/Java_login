@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="リソース &apos;PTra10-インスタンスとクラス&apos; を削除" deleteContents="false" description="リソース &apos;PTra10-インスタンスとクラス&apos; を削除" element1="/PTra10-インスタンスとクラス" flags="7" id="org.eclipse.ltk.core.refactoring.delete.resources" resources="1" stamp="1493877315593"/>
+</session>

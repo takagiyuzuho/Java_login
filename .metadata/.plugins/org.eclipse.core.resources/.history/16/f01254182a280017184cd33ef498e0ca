@@ -1,0 +1,117 @@
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.List;
+import java.util.Scanner;
+
+
+public class HitAndBlow {
+	public static void main(String[] args) {
+		System.out.println("何桁の数字で開始しますか？（1〜9）");
+
+		ArrayList<Integer> digitNum = new ArrayList<>();
+
+		Scanner sc = new Scanner(System.in);
+
+
+		//解答を選ぶ　今こっちが数字
+		while(true) {
+			int inputNum = sc.nextInt();
+
+			//入力判定
+			if(1 <= inputNum && inputNum >= 9) {
+				System.out.println("正しい数値を入力してください");
+			}
+
+			//入力された文字をdigitNumに追加
+			for(int i = 1; i <= inputNum; i++) {
+				digitNum.add(i);
+			}
+
+			//シャッフル
+			Collections.shuffle(digitNum);
+
+			System.out.print("コンピューターが数字を選んでいます");
+	        String abc = "。。。";
+	        toCharSlow(abc);
+
+			//答え（あとで消す）
+	        System.out.println(digitNum);
+
+			break;
+		}
+
+		System.out.println();
+
+		//解答を入力（メソッド）こっちが文字列
+
+		int count = 1;
+		int hitNum = 0;
+		int blowNum = 0;
+
+		while(true) {
+//			ArrayList<Integer> ansNumList = new ArrayList<>();
+			System.out.println(count + "回目の回答");
+
+			Scanner sc2 = new Scanner(System.in);
+			String answerNum = sc2.nextLine();
+			//入力された文字をNumに追加
+
+			String[] strArray = answerNum.split("");
+			List<String> ansNumList = Arrays.asList(strArray);
+
+//			ansNumList.add(answerNum);
+
+			//答え（あとで消す）
+			System.out.println();
+			System.out.println(ansNumList);
+			System.out.println(ansNumList.size());
+			System.out.println(digitNum);
+			System.out.println(digitNum.size());
+
+			//答え判定:hit
+			for (int i = 0; i < ansNumList.size(); i++) {
+				if(digitNum.get(i).equals(ansNumList.get(i))){
+					hitNum += 1;
+				}
+			}
+
+			//答え判定:blow
+			for (int i = 0; i < ansNumList.size(); i++) {
+				for (int j = 0; j < i; j++) {
+					if (ansNumList.get(i).equals(digitNum.get(i))) {
+						blowNum += 1;
+					}
+				}
+			}
+
+			System.out.println("(" + hitNum +"Hit:" + blowNum + "Blow)");
+			count++;
+
+			if(hitNum == ansNumList.size() && blowNum == ansNumList.size()) {
+				System.out.println(count + "回でクリア");
+				break;
+			}
+		}
+	}
+
+
+	//文字を遅く表示（メソッド化する）
+	public static void toCharSlow(String str) {
+
+        char data[] = str.toCharArray();
+
+        // 配列数を取得
+        int arr_num = data.length;
+
+        for (int i = 0; i <= arr_num-1; i++) {
+            try{
+                // 指定ミリ秒の間眠る
+                Thread.sleep(600);
+            }
+            catch(InterruptedException e){
+            }
+            System.out.print(data[i]);
+        }
+	}
+}

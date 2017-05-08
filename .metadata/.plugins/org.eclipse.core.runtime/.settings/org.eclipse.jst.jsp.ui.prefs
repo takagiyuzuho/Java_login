@@ -1,0 +1,10 @@
+SCRIPT_AREA_BORDER=\#F9FAF4 | null | null | null | null | null
+commentBorder=\#FFFFFF | null | null | null | null | null
+commentText=\#FFFFFF | null | null | null | null | null
+eclipse.preferences.version=1
+jsp_content=\#CFBFAD | null | null | null | null | null
+newFileTemplateName=\u65B0\u898F JSP \u30D5\u30A1\u30A4\u30EB (html)
+tagAttributeEquals=\#CFBFAD | null | null | null | null | null
+tagAttributeName=\#FF007F | null | null | null | null | null
+tagAttributeValue=\#ECE47E | null | null | null | null | null
+tagBorder=\#A7EC21 | null | null | null | null | null

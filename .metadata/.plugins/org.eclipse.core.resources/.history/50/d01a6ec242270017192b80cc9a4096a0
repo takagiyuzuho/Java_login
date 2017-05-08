@@ -1,0 +1,7 @@
+
+public class aaa {
+	public static void main(String[] args) {
+		String[] num = new String[]{"1","2","3"};
+		System.out.println(num);
+	}
+}

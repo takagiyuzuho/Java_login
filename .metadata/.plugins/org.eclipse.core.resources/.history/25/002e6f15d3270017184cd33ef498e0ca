@@ -1,0 +1,69 @@
+import java.util.Scanner;
+
+public class BlackJack {
+	public static void main(String[] args) {
+		System.out.println("全5回ゲームを行います。\n※ただし持ち金が無くなった時点でゲーム終了です。");
+
+		for(int i = 0; i < 5; i++) {
+			int count = 1;
+			int money = 10000;
+			int betMoney = 0;
+
+			int mySum = 0;
+			int dealerSum = 0;
+
+			System.out.println(count + "回目のゲームを開始します。");
+			System.out.println("BET金額を入力してください。（持ち金：" + money + "円)");
+
+			//金額の入力
+			Scanner sc = new Scanner(System.in);
+			betMoney += sc.nextInt();
+			money -= betMoney;
+			System.out.println("==========================================================");
+
+			System.out.println("ディーラーの手札");
+			System.out.println("スペード 3");
+			System.out.println("？？？？？？");
+			System.out.println("**********");
+
+			System.out.println("あなたの手札");
+			System.out.println("スペード 3");
+			System.out.println("ハート 3");
+			System.out.println("合計値：");
+			System.out.println("**********");
+
+			System.out.println("どうしますか？");
+			System.out.println("1:Hit - もう一枚カードを引く");
+			System.out.println("2:Stand - この手札で勝負");
+
+			Scanner sc2 = new Scanner(System.in);
+			int selectNum = sc2.nextInt();
+
+			if(selectNum == 1) {
+				System.out.println("処理、メソッド");
+			} else if(selectNum == 2) {
+				System.out.println("処理、メソッド");
+			} else {
+				System.out.println("ちゃんとやって");
+			}
+
+			System.out.println("ディーラーの手札を公開します。");
+			System.out.println("スペード 3");
+			System.out.println("？？？？？？");
+			System.out.println("エース 3");
+			System.out.println("合計：");
+
+			if(mySum > dealerSum) {
+				System.out.println("おめでとう。配当金をお渡しします。");
+				//メソッド　お金追加
+			} else if (mySum < dealerSum){
+				System.out.println("あなたの負けです。掛け金は没収します。");
+				//メソッド　お金没収
+			} else if (mySum == dealerSum) {
+				System.out.println("引き分けです。掛け金を払い戻します。");
+				//メソッド 払い戻し
+			}
+
+		}
+	}
+}

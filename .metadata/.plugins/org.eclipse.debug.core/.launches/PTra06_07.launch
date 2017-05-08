@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<launchConfiguration type="org.eclipse.jdt.launching.localJavaApplication">
+<listAttribute key="org.eclipse.debug.core.MAPPED_RESOURCE_PATHS">
+<listEntry value="/PTra06-for文(条件分岐と繰り返し)_src/PTra06_07.java"/>
+</listAttribute>
+<listAttribute key="org.eclipse.debug.core.MAPPED_RESOURCE_TYPES">
+<listEntry value="1"/>
+</listAttribute>
+<stringAttribute key="org.eclipse.jdt.launching.MAIN_TYPE" value="PTra06_07"/>
+<stringAttribute key="org.eclipse.jdt.launching.PROJECT_ATTR" value="PTra06-for文(条件分岐と繰り返し)_src"/>
+</launchConfiguration>

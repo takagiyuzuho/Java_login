@@ -1,0 +1,60 @@
+import java.util.Random;
+
+/*
+ * PTra07_07.java
+ *   作成	IT-College	2016
+ *------------------------------------------------------------
+ * Copyright(c) Rhizome Inc. All Rights Reserved.
+ */
+
+public class PTra07_07 {
+	public static void main(String[] args) {
+
+		// int型の配列arrayを作成し、10個の領域を確保してください
+		int[] array = new int[10];
+
+
+		// 配列arrayに [1,2,3,5,8,13,21,34,55,89] を代入してください
+		array = new int[]{1,2,3,5,8,13,21,34,55,89};
+
+		// 1～100までのランダムな数値を取得して、変数targetに代入してください
+		Random rand = new Random();
+		int target = rand.nextInt(100) + 1;
+
+
+		// 「二分探索」を用いて、変数targetと同じ数値を配列arrayの中から探し、合致する値の入った添字を出力してください
+		// 見つからなかった場合は、「見つかりませんでした」を出力してください
+		// http://judge.u-aizu.ac.jp/onlinejudge/commentary.jsp?id=ALDS1_4_B
+
+		System.out.println("探したい値：" + target);
+
+		int low = 0;
+		int high = array.length;
+		int match = -1;
+
+		while (low < high) {
+			int mid = (low + high) / 2;
+
+			if (array[mid] == target) {
+				match = mid;
+				break;
+			}
+
+			if (array[mid] > target) {
+				high = mid;
+				continue;
+			}
+
+			if (array[mid] < target) {
+				low = mid;
+				continue;
+			}
+
+			if (match != -1) {
+				System.out.println(match);
+			} else {
+				System.out.println("みつかりませんでした");
+			}
+		}
+	}
+}

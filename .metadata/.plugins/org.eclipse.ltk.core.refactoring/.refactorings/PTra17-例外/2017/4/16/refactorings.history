@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Move element &apos;PTra17_05.java&apos; to &apos;PTra17-例外/src/ptra17/ptra17&apos;&#x0A;- 元のプロジェクト: &apos;PTra17-例外&apos;&#x0A;- 宛先要素: &apos;PTra17-例外/src/ptra17/ptra17&apos;&#x0A;- オリジナル要素: &apos;PTra17_05.java&apos;&#x0A;- リファクタリングされた要素の参照を更新" description="コンパイル単位を移動" destination="/src\/ptra17&lt;ptra17" element1="/src\/ptra17&lt;{PTra17_05.java" files="0" flags="589830" folders="0" id="org.eclipse.jdt.ui.move" policy="org.eclipse.jdt.ui.moveResources" qualified="false" references="true" stamp="1492348226555" units="1" version="1.0"/>
+</session>

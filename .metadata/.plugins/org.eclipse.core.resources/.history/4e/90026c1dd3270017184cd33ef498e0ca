@@ -1,0 +1,43 @@
+import java.util.Scanner;
+
+public class BlackJack2 {
+	public static void main(String[] args) {
+		System.out.println("全5回ゲームを行います。\n※ただし持ち金が無くなった時点でゲーム終了です。");
+		int count = 1;
+		
+		for(int i = 0; i < 5; i++) {
+			System.out.println(count + "回目のゲームを開始します");
+			//賭け金の入力
+			bet();
+			//ディーラーの手札を表示
+		}
+
+		
+	}
+
+	/**
+	 * 賭け金の入力
+	 * @param
+	 * @return handMoney
+	 */
+	public static int bet() {
+		int handMoney = 10000;
+
+		System.out.println("BET金額を入力してください。（持ち金：" + handMoney + "円)");
+		while(true) {
+		    try {
+		    	Scanner sc = new Scanner(System.in);
+				int inputMoney = sc.nextInt();
+				if(inputMoney > handMoney) {
+					System.out.println("そんなにお金持ってないでしょ！");
+				} else {
+					handMoney -= inputMoney;
+					break;
+				}
+		    } catch (Exception e) {
+		    	System.out.println("数値を入力してください");
+		    }
+		}
+		return handMoney;
+	}
+}
